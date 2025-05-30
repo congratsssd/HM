@@ -1,0 +1,59 @@
+.el-button {
+    vertical-align: middle;
+}
+
+.el-button.el-icon-fold {
+    font-size: 20px; /* 调整图标的大小 */
+    line-height: 1; /* 确保按钮内的图标垂直居中 */
+}
+
+.user-card {
+    width: 100%; /* 根据需要调整 */
+    border-radius: 10px; /* 设置圆角 */
+    transition: border-color 0.3s; /* 平滑过渡效果 */
+    cursor: pointer; /* 鼠标悬停时显示指针 */
+}
+
+.scrollable {
+    max-height: 728px; /* 根据需要调整高度 */
+    overflow-y: auto; /* 当内容超出时显示滚动条 */
+}
+.scrollable::-webkit-scrollbar {
+    display: none; /* Chrome, Safari 和 Opera */
+}
+
+.scrollable_order {
+    max-height: 240px; /* 根据需要调整高度 */
+    overflow-y: auto; /* 当内容超出时显示滚动条 */
+}
+.scrollable_order::-webkit-scrollbar {
+    display: none; /* Chrome, Safari 和 Opera */
+}
+
+.user-card.is-active {
+    border: 3px solid #1082d3; /* 选中时的边框颜色 */
+}
+
+.user-name {
+    font-size: 16px; /* 比手机号大一号字体 */
+    font-weight: 600; /* 字体更黑 */
+    color: #000; /* 字体颜色黑色 */
+    line-height: 1.5; /* 行高，确保文字垂直居中 */
+}
+
+.user-phone {
+    font-size: 14px; /* 手机号字体大小 */
+    color: #555; /* 字体颜色稍微淡一些 */
+    line-height: 1.5; /* 行高，确保文字垂直居中 */
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.full-height {
+    min-height: 100vh; /* 使行的高度至少为视口高度 */
+    margin: 0; /* 移除默认的margin */
+}

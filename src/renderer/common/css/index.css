@@ -1,0 +1,11 @@
+/* 可以根据你的设计要求进一步定制 */
+.el-menu-vertical-demo:not(.el-menu--collapse) {
+    width: 200px;
+    min-height: 400px;
+}
+.selected-menu {
+    background-color: green !important; /* 使用 !important 来确保优先级 */
+}
+.green-icon {
+    fill: green;
+}

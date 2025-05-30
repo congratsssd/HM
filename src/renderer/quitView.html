@@ -1,0 +1,81 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>退出</title>
+    </head>
+    <body>
+        <style>
+            body::-webkit-scrollbar {
+                display: none; /* Chrome, Safari 和 Opera */
+            }
+            html,
+            body {
+                height: 100%; /* 限制高度为视口高度 */
+                overflow: hidden; /* 防止滚动 */
+                background: transparent;
+            }
+
+            * {
+                margin: 0;
+                padding: 0;
+                list-style: none;
+            }
+
+            #quit {
+                -webkit-app-region: drag;
+                width: calc(95vw - 6px);
+                height: calc(95vh - 6px);
+                border-radius: 15px;
+                border: 3px solid #45bbff;
+                box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                background-color: #fff;
+            }
+            #quit p {
+                font-size: 22px;
+            }
+            .main {
+                margin-top: 30px;
+            }
+            .main button {
+                -webkit-app-region: no-drag;
+                cursor: pointer;
+                font-size: 16px;
+                color: #fff;
+                border: none;
+                outline: none;
+                padding: 5px 10px;
+                background-color: RED;
+                margin: 0 20px;
+                box-shadow: 0 0 6px rgba(70, 167, 247, 0.8);
+                border-radius: 5px;
+            }
+        </style>
+        <body>
+            <div id="quit">
+                <p>确认退出吗？</p>
+                <div class="main">
+                    <button style="background: #fff; color: #000">取消</button>
+                    <button>确认</button>
+                </div>
+            </div>
+        </body>
+        <script>
+            const { ipcRenderer } = window.electron
+            console.log('确认退出吗？')
+            const element = document.querySelectorAll('.main button')
+            const cancel = element[0]
+            const submit = element[1]
+            cancel.addEventListener('click', () => {
+                window.close()
+            })
+            submit.addEventListener('click', () => {
+                ipcRenderer.send('close-window-all')
+            })
+        </script>
+    </body>
+</html>
